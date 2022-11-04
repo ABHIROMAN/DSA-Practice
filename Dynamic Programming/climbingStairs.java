@@ -1,6 +1,9 @@
+import java.util.*;
+
 public class climbingStairs {
 
-    public int climbStairs(int n) {
+    // Top down approach
+    public static int climbStairsTopDown(int n) {
 
         if(n == 0 || n == 1) return 1;
 
@@ -14,6 +17,31 @@ public class climbingStairs {
         }
 
         return dp[n];
+    }
+
+    //Bottom up approach
+
+    public static int climbStairs(int n) {
+
+        int dp[] = new int[n+1];
+        Arrays.fill(dp, -1);
+
+        return ClimbStairBottomUp(n, dp);
+    }
+
+    public static int ClimbStairBottomUp(int n, int dp[]) {
+
+
+        if(n == 0 || n == 1) return 1;
+        if(n < 0) return 0;
+
+        if(dp[n] != -1) return dp[n];
+        return dp[n] = ClimbStairBottomUp(n-1, dp) + ClimbStairBottomUp(n-2, dp);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(climbStairsTopDown(3));
     }
     
 }
