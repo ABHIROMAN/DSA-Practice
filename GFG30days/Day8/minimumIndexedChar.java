@@ -4,9 +4,9 @@ import java.util.*;
 
 public class minimumIndexedChar {
 
+
     public static int minIndexChar(String str, String patt) {
 
-        int mn = 100001;
 
         Map<Character, Integer> map = new HashMap<>();
 
