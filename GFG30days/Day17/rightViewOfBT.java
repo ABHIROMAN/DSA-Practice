@@ -1,4 +1,4 @@
-package GFG30days.Day16;
+package GFG30days.Day17;
 
 import java.util.*;
 
