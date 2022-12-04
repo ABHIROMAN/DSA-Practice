@@ -22,8 +22,6 @@ public class reverseALinkedList {
         Node prev = null;
         Node curr = node;
 
-        Node start = node;
-        Node head = null;
 
         Node next = null;
         int c = k;
