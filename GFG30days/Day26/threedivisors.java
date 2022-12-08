@@ -1,0 +1,54 @@
+package GFG30days.Day26;
+
+import java.util.*;
+
+public class threedivisors {
+    
+    static ArrayList<Integer> threeDivisors(ArrayList<Long> query, int q){
+        // code here
+        ArrayList<Integer> prime = primeNumber(1000000);
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(long q1 : query) {
+            ans.add(solve(prime,q1));
+        }
+        return ans;
+    }
+    
+    public static ArrayList<Integer> primeNumber(int n) {
+        int[] prime = new int[n+1];
+        Arrays.fill(prime,1);
+        prime[0]=0;
+        prime[1]=0;
+        // 0 -> Non - prime Index.
+        // 1 -> prime Index.
+        
+        for(int i=2;i<=n;i++) {
+            if(prime[i]==1) {
+                for(int j=i+i;j<=n;j+=i) {
+                    prime[j]=0;
+                }
+            }
+        }
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0;i<=n;i++) {
+            if(prime[i]==1) list.add(i);
+        }
+        return list;
+    }
+    
+    public static int solve(ArrayList<Integer> prime,long q) {
+        int v1 = (int)Math.sqrt(q);
+        int lo=0,hi=prime.size()-1;
+        int ans=0;
+        while(lo<=hi) {
+            int mid = lo+(hi-lo)/2;
+            if(prime.get(mid)<=v1) {
+                lo=mid+1;
+                ans = Math.max(ans,mid+1);
+            } else {
+                hi=mid-1;
+            }
+        }
+        return ans;
+    }
+}
