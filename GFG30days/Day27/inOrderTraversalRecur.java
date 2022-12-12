@@ -10,6 +10,7 @@ class Node {
         left = right = null;
     }
 }
+
 public class inOrderTraversalRecur {
     
     ArrayList<Integer> inOrder(Node root) {
