@@ -4,7 +4,7 @@ public class maxmPathSum {
     
     static int maximumPath(int N, int Matrix[][]) {
 
-        int m = Matrix[0].length;
+        // int m = Matrix[0].length;
         int dp[][] = new int[N][N];
 
         int ans = isSafe(Matrix, N, dp);
