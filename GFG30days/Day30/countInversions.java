@@ -43,9 +43,7 @@ public class countInversions {
             else{
                 arr[k++] = l2[j++];
                 count += n1-i;
-            }
-                
-            
+            }    
         }
         
         while(i<n1)
