@@ -31,6 +31,7 @@ public class Hopscotch {
         }
         return ans;
     }
+    
     static void add(int mat[][], int i, int j, Queue<int[]> q, int step) {
         if(i < 0 || j < 0 || i >= mat.length || j >= mat[0].length) return;
         
