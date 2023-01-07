@@ -33,15 +33,15 @@ public class flattenningLinkedList {
         
         }
         
-        Node merge(Node head1, Node head2) {
+    Node merge(Node head1, Node head2) {
             
-            if(head1 == null) return head2;
-            if(head2 == null) return head1;
-            if(head1.data <= head2.data) {
-                head1.bottom = merge(head1.bottom, head2);
-                return head1;
-            }
+        if(head1 == null) return head2;
+        if(head2 == null) return head1;
+        if(head1.data <= head2.data) {
+            head1.bottom = merge(head1.bottom, head2);
+            return head1;
+        }
             head2.bottom = merge(head1, head2.bottom);
             return head2;
-        }
+    }
 }
