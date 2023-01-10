@@ -50,12 +50,12 @@ public class sameTreeIter {
                 if(!check(p.left, q.left)) return false;
                 if(p.left != null) {
                     deqP.addLast(p.left);
-                    depQ.addLast(q.left);
+                    deqQ.addLast(q.left);
                 }
                 if(!check(p.right, q.right)) return false;
                 if(p.right != null) {
                     deqP.addLast(p.right);
-                    depQ.addLast(q.right);
+                    deqQ.addLast(q.right);
                 }
             }
         }
